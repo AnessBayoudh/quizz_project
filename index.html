@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <!-- Home screen -->
+        <section id="home-screen" class="screen active">
+            <div class="card welcome-card">
+                <h1>Test your web development skills</h1>
+                <p>Ready to take on the challenge? Answer our series of questions and discover your score at the end of the journey.</p>
+                <button id="start-btn" class="btn" aria-label="Commencer le quiz">Start Quiz</button>
+            </div>
+        </section>
+
+        <!-- Configuration screen -->
+        <section id="config-screen" class="screen">
+            <div class="card config-card">
+                <h2>Quiz Settings</h2>
+                <p>Enter your name:</p>
+                <input type="text" id="player-name" placeholder="Your name" aria-label="Enter your name" maxlength="30">
+                <p>Choose the number of questions:</p>
+                
+                <div class="config-options" role="group" aria-label="Nombre de questions">
+                    <button class="config-btn selected" data-count="5">5 questions</button>
+                    <button class="config-btn" data-count="10">10 questions</button>
+                    <button class="config-btn" data-count="15">15 questions</button>
+                </div>
+
+                <button id="launch-quiz-btn" class="btn" aria-label="Lancer le quiz">Let's start</button>
+            </div>
+        </section>
+
+        <!-- Quiz interface -->
+        <section id="quiz-screen" class="screen">
+            <div class="card quiz-card">
+                <header class="quiz-header">
+                    <div class="quiz-status">
+                        <span id="question-counter">Question 1/5</span>
+                        <span id="timer" role="timer" aria-live="polite">Time: 15s</span>
+                    </div>
+                    <div class="progress-bar-container" aria-hidden="true">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </header>
+
+                <div class="question-container">
+                    <h2 id="question-text">Loading next question...</h2>
+                </div>
+
+                <div id="options-container" class="options-grid" role="group" aria-label="Options">
+
+                </div>
+
+                <footer class="quiz-footer">
+                    <button id="next-btn" class="btn hidden" aria-label="Next question">Next</button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Result screen -->
+        <section id="result-screen" class="screen">
+            <div class="card result-card">
+                <h2>Quiz Completed</h2>
+                <div class="score-display">
+                    <p>Your final score is :</p>
+                    <span id="final-score">0</span> / <span id="total-questions">5</span>
+                </div>
+                <p id="result-message" class="result-message"></p>
+                <section class="leaderboard" aria-labelledby="leaderboard-title">
+                    <h3 id="leaderboard-title">High Scores</h3>
+                    <ol id="leaderboard-list"></ol>
+                </section>
+                <button id="restart-btn" class="btn" aria-label="Restart quiz">Try Again</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
