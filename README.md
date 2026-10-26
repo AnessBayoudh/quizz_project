@@ -2,8 +2,7 @@
 
 A lightweight, browser-based quiz for testing knowledge of HTML, CSS, JavaScript, web standards, and accessibility.
 
-The application is built with plain HTML, CSS, and JavaScript. It does not require a framework, backend, database, or build step.
-
+The application is built with plain HTML, CSS, and JavaScript. 
 ## Features
 
 - 19 questions covering:
@@ -27,12 +26,7 @@ The application is built with plain HTML, CSS, and JavaScript. It does not requi
 
 ### Requirements
 
-Any modern web browser with JavaScript enabled, such as:
-
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-- Safari
+Any modern web browser with JavaScript enabled.
 
 ### Run locally
 
@@ -41,13 +35,7 @@ Any modern web browser with JavaScript enabled, such as:
 3. Click **Start Quiz**.
 4. Enter a name, choose the number of questions, and click **Let's start**.
 
-For a more consistent local development environment, serve the folder with a static HTTP server. For example, if Python is installed:
 
-```bash
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000> in your browser.
 
 ## How to Play
 
@@ -102,26 +90,5 @@ To add or edit questions, update the `questions` array in [`script.js`](./script
 
 The `answer` value is the zero-based index of the correct option.
 
-Useful configuration values are also defined near the top of [`script.js`](./script.js):
 
-- `QUESTION_TIME_LIMIT` controls the time allowed per question.
-- `LEADERBOARD_STORAGE_KEY` controls the `localStorage` key used for scores.
-- `MAX_LEADERBOARD_ENTRIES` controls the leaderboard size.
 
-The available question-count buttons are defined in [`index.html`](./index.html) using the `data-count` attribute.
-
-## Data and Privacy
-
-Leaderboard data is stored only in the current browser's local storage under the `quiz-highscores` key. No data is sent to a server. Clearing browser storage removes saved scores.
-
-## Technologies
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Browser `localStorage`
-- Google Fonts (`Poppins`) loaded by [`index.html`](./index.html)
-
-## License
-
-No license has been specified for this project.
